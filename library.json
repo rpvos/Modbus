@@ -1,0 +1,36 @@
+{
+    "$schema": "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/schema/library.json",
+    "name": "Modbus",
+    "version": "1.0.0",
+    "description": "Library containing Modbus message implementation.",
+    "keywords": [
+        "Modbus"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rpvos/Modbus.git"
+    },
+    "authors": [
+        {
+            "name": "Rik Vos",
+            "email": "Rik.Vos01@gmail.com",
+            "url": "http://rpvos.nl",
+            "maintainer": true
+        }
+    ],
+    "license": "GPL-3.0-or-later",
+    "frameworks": [
+        "*"
+    ],
+    "platforms": [
+        "*"
+    ],
+    "headers": [
+        "crc16.h"
+    ],
+    "examples": [],
+    "dependencies": [],
+    "export": {},
+    "scripts": {},
+    "build": {}
+}
