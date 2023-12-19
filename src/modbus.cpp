@@ -217,7 +217,7 @@ bool ModbusSlave::ValidateReadResponse(const byte *const message, const byte fun
     return Crc::ValidateCrcModbus(message, GetReadResponseMessageLength(number_of_registers), false);
 }
 
-void ModbusSlave::GetReadRegisters(const byte *const message, const word number_of_registers, word *const register_value)
+void ModbusSlave::GetReadRegister(const byte *const message, const word number_of_registers, word *const register_value)
 {
     for (size_t i = 0; i < number_of_registers; i++)
     {
