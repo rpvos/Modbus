@@ -21,6 +21,7 @@ public:
 
     void ConstructReadMessage(byte *const message, const byte function_code, const word address, const word number_of_registers, const bool broadcast = false);
     bool ValidateReadResponse(const byte *const message, const byte function_code, const word number_of_registers, const bool broadcast = false);
+    void GetReadRegisters(const byte *const message, const word number_of_registers, word *const register_values);
 
 private:
     uint8_t slave_id_;
