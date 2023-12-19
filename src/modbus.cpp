@@ -221,7 +221,7 @@ void ModbusSlave::GetReadRegister(const byte *const message, const word number_o
 {
     for (size_t i = 0; i < number_of_registers; i++)
     {
-        register_value[i] = message[kReadResponseRegisterValueUpperMessageIndex + (i * 2)] << kSizeOfByte ||
+        register_value[i] = message[kReadResponseRegisterValueUpperMessageIndex + (i * 2)] << kSizeOfByte |
                             message[kReadResponseRegisterValueLowerMessageIndex + (i * 2)];
     }
 }
