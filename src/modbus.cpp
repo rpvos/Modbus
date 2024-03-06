@@ -106,7 +106,7 @@ void ModbusSlave::ConstructWriteMessage(byte *const message, const byte function
         message[kWriteRegisterValueLowerMessageIndex + (register_number * 2)] = lower_register_value;
     }
 
-    Crc::AddCrcModbus(message, message, GetWriteMessageLength(number_of_registers) - kCrcLength, false);
+    Crc::AddCrc16Modbus(message, message, GetWriteMessageLength(number_of_registers) - kCrcLength, false);
 }
 
 bool ModbusSlave::ValidateWriteResponse(const byte *const message, const byte function_code, const word address, const word number_of_registers, const bool broadcast)
@@ -156,7 +156,7 @@ bool ModbusSlave::ValidateWriteResponse(const byte *const message, const byte fu
         return false;
     };
 
-    return Crc::ValidateCrcModbus(message, GetWriteResponseMessageLength(), false);
+    return Crc::ValidateCrc16Modbus(message, GetWriteResponseMessageLength(), false);
 }
 
 void ModbusSlave::ConstructReadMessage(byte *const message, const byte function_code, const word address, const word number_of_registers, const bool broadcast)
@@ -182,7 +182,7 @@ void ModbusSlave::ConstructReadMessage(byte *const message, const byte function_
     message[kNumberOfRegistersUpperMessageIndex] = number_of_registers_upper;
     message[kNumberOfRegistersLowerMessageIndex] = number_of_registers_lower;
 
-    Crc::AddCrcModbus(message, message, GetReadMessageLength() - kCrcLength, false);
+    Crc::AddCrc16Modbus(message, message, GetReadMessageLength() - kCrcLength, false);
 }
 
 bool ModbusSlave::ValidateReadResponse(const byte *const message, const byte function_code, const word number_of_registers, const bool broadcast)
@@ -215,7 +215,7 @@ bool ModbusSlave::ValidateReadResponse(const byte *const message, const byte fun
         return false;
     };
 
-    return Crc::ValidateCrcModbus(message, GetReadResponseMessageLength(number_of_registers), false);
+    return Crc::ValidateCrc16Modbus(message, GetReadResponseMessageLength(number_of_registers), false);
 }
 
 void ModbusSlave::GetReadRegister(const byte *const message, const word number_of_registers, word *const register_value)
