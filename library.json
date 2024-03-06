@@ -29,9 +29,7 @@
         "modbus.h"
     ],
     "examples": [],
-    "dependencies": {
-        "Crc": "https://github.com/rpvos/Crc.git"
-    },
+    "dependencies": [],
     "export": {},
     "scripts": {},
     "build": {}
