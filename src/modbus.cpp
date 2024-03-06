@@ -1,4 +1,5 @@
-#include "modbus.h"
+#include "modbus.hpp"
+#include <crc16.hpp>
 
 const uint8_t kSizeOfByte = 8;
 

@@ -1,7 +1,6 @@
 #ifndef MODBUS_H_
 #define MODBUS_H_
 #include <Arduino.h>
-#include <crc16.hpp>
 
 class ModbusSlave
 {
