@@ -26,10 +26,12 @@
         "*"
     ],
     "headers": [
-        "modbus.h"
+        "modbus.hpp"
     ],
     "examples": [],
-    "dependencies": [],
+    "dependencies": {
+        "Crc": "https://github.com/rpvos/Crc.git"
+    },
     "export": {},
     "scripts": {},
     "build": {}
